@@ -1,0 +1,6 @@
+#Ignore Mac OS and sublime generated files
+.DS_Store
+._.DS_Store
+*.sublime-project
+*.sublime-workspace
+Thumbs.db

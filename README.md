@@ -1,1 +1,2 @@
-# english2cypher
+# Convert English sentences to cypher queries
+
