@@ -1,0 +1,3 @@
+PATH-AUTHOR-ORG FROM $[name1](string) TO $[org1](string) DEPTH $[number](int)
+
+PATH-AUTHOR-AUTHOR FROM $[name1](string) TO $[name2](string) DEPTH $[number](int)

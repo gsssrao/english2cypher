@@ -1,0 +1,8 @@
+MATCH (cs:Author), (g:Organization), p = shortestPath((cs)-[f:CO_AUTHOR*..$[number]]->(ms)), 
+q = (ms)-[d:AFFILIATION]-(g)
+WHERE cs.name = $[name1] AND  g.name = $[org1]
+RETURN p,q
+
+MATCH (cs:Author),(ms:Author), p = shortestPath((cs)-[f:CO_AUTHOR*..$[number]]->(ms))
+WHERE cs.name = $[name1] AND ms.name = $[name2]
+RETURN p

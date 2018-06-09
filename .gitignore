@@ -4,3 +4,5 @@
 *.sublime-project
 *.sublime-workspace
 Thumbs.db
+*.js
+*.ne
