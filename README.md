@@ -2,6 +2,8 @@
 
 This repository contains code to generate a parser for converting english to [cypher](https://neo4j.com/developer/cypher-query-language/). The only input needed are english sentences and their corresponding cyphers. The generated parser is an [earley parser](https://en.wikipedia.org/wiki/Earley_parser). This is similar to the template phrases feature offered in [neo4j bloom](https://neo4j.com/blog/introducing-neo4j-bloom-graph-data-visualization-for-everyone/).
 
+**Check out a [working demo here](https://gsssrao.github.io/english2cypher-demo/)**
+
 ![Example](https://raw.githubusercontent.com/gsssrao/english2cypher/master/example.png?token=AJP-RjIHGlhg3se-dv0DqyrrDIC1y8ZYks5bKTn-wA%3D%3D)
 
 ## Motivation
