@@ -134,8 +134,8 @@ RETURN distinct b.name
 
 **Note:** string can have the following characters `a-zA-Z0-9 -.,` whereas int can have only `0-9`
 
+## Contribution, issues and new features
 
-
-
+If you have any questions or suggestions about the code or if you encounter any bugs, feel free to create an issue. If you want any new feature to be added to the code besides the ones mentioned in `TODO`, feel free to create an issue. 
 
 
