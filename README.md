@@ -8,7 +8,7 @@ This repository contains code to generate a parser for converting english to [cy
 
 ## Motivation
 
-Though [neo4j](https://neo4j.com/)'s cypher language is intuitive and great for making requests on a neo4j database, often neo4j is running on the backend of your project/website and for making requests from the front-end one needs generate cypher queries. Since cypher is a query language and takes some time to learn, it would be easier if there was a tool to convert natural english sentences to cyphers. This would allow any consumer/common man to make queries to neo4j database (Note: These queries need to be of a pre-defined structure).
+Though [neo4j](https://neo4j.com/)'s cypher language is intuitive and great for making requests on a neo4j database, often neo4j is running on the backend of your project/website and for making requests from the front-end, one needs to generate cypher queries. Since cypher is a query language and takes some time to learn, it would be easier if there was a tool to convert natural english sentences to cyphers. This would allow any consumer/common man to make queries to the neo4j database (Note: These queries need to be of a pre-defined structure).
 
 ## TODO
 - [x] Add case-insensitiveness for english queries.
@@ -132,7 +132,7 @@ MATCH (b:company)
 RETURN distinct b.name
 ```
 
-**Note:** string can have the following characters `a-zA-Z0-9 -.,` whereas int can have only `0-9`
+**Note:** string can have the following characters `a-zA-Z0-9 -.,` whereas int can have only `0-9`. Try to avoid creating rules which are prefixes of one another, for example: `All the people in the database` and `All the people in the database limit to $[number](int)`. Instead you can modify them and have the following two rules `All the people in the database no limit` and `All the people in the database limit to $[number](int)`.
 
 ## Contribution, issues and new features
 
