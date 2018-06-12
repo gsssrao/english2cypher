@@ -1,3 +1,7 @@
-PATH-AUTHOR-ORG FROM $[name1](string) TO $[org1](string) DEPTH $[number](int)
+Companies that person $[personName](string) is working with
 
-PATH-AUTHOR-AUTHOR FROM $[name1](string) TO $[name2](string) DEPTH $[number](int)
+All the people working for the company $[companyName](string)
+
+All the people in the database limit to $[number](int)
+
+All the companies in the database

@@ -1,39 +1,9 @@
 import re
 import os
 
-# Backup
-# main -> (statement):+
-# statement -> pathAut space author1 "to" author2
-# statement -> pathAut space name space "to" space name {%
-#     function(data) {
-#         return {
-#             operator: "names",
-#             name1:  data[2],
-#             name2: data[6],
-#             type: 1
-#         };
-#     }
-# %}
-# statement -> pathAutOrg space name space "to" space name {%
-#     function(data) {
-#         return {
-#             operator: "names",
-#             name1:  data[2],
-#             name2: data[6],
-#             type: 2
-#         };
-#     }
-# %}
-# author1 -> [Aa] [Uu] [Tt] [Hh] [Oo] [Rr] [1]
-# author2 -> [Aa] [Uu] [Tt] [Hh] [Oo] [Rr] [2]
-# pathAut -> [Pp] [Aa] [Tt] [Hh] [- ] [Aa] [Uu] [Tt] [Hh] [Oo] [Rr] [ ] [Ff] [Rr] [Oo] [Mm]
-# pathAutOrg -> [Pp] [Aa] [Tt] [Hh] [- ] [Oo] [Rr] [Gg] [Aa] [Nn] [Ii] [Zz] [Aa] [Tt] [Ii] [Oo] [Nn] [ ] [Ff] [Rr] [Oo] [Mm]
-# name -> [a-zA-Z0-9 -]:*
-# space -> " "
-
 def printNonVarPartOfParser(grammarFile, nonVarStringParts, pRuleList):
 	for i, rule in enumerate(pRuleList):
-		# This is done to make the parser case-sesitivity resistant
+		# This is done to make the parser case-sensitivity resistant
 		parserLine = rule + " -> "
 		for i, char in enumerate(nonVarStringParts[i]):
 			if char == ' ' or char == ',' or char == '-':
@@ -46,7 +16,7 @@ def printVarPartOfParser(grammarFile, varNames, varTypes):
 	for i, varName in enumerate(varNames):
 		parserLine = varName+" -> "
 		if varTypes[i] == "string":
-			parserLine += "[a-zA-Z0-9 -]:+"
+			parserLine += "[a-zA-Z0-9 -.,]:+"
 		elif varTypes[i] == "int":
 			parserLine += "[0-9]:+"
 		grammarFile.write(parserLine+"\n")
@@ -120,7 +90,7 @@ def generateJSParserFunction(cyphersFile, cypher, number, varNames, varTypes):
 		if varTypes[i] == 'string':
 			cypher = cypher.replace("$["+varName+"]","\"\'+"+"result."+prefix+varName+"[0].join(\"\")"+"+\'\"")
 		elif varTypes[i] == 'int':
-			cypher = cypher.replace("$["+varName+"]","\'+"+"result."+prefix+varName+"+\'")
+			cypher = cypher.replace("$["+varName+"]","\'+"+"result."+prefix+varName+"[0].join(\"\")+\'")
 
 	cyphersFile.write("\t\tcode += \'"+cypher.replace('\n','\\n\\\n')+"\';\n")
 	cyphersFile.write("}\n")
