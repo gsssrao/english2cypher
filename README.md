@@ -2,6 +2,8 @@
 
 This repository contains code to generate a parser for converting english to [cypher](https://neo4j.com/developer/cypher-query-language/). The only input needed are english sentences and their corresponding cyphers. The generated parser is an [earley parser](https://en.wikipedia.org/wiki/Earley_parser). This is similar to the template phrases feature offered in [neo4j bloom](https://neo4j.com/blog/introducing-neo4j-bloom-graph-data-visualization-for-everyone/).
 
+![]
+
 ## Motivation
 
 Though [neo4j](https://neo4j.com/)'s cypher language is intuitive and great for making requests on a neo4j database, often neo4j is running on the backend of your project/website and for making requests from the front-end one needs generate cypher queries. Since cypher is a query language and takes some time to learn, it would be easier if there was a tool to convert natural english sentences to cyphers. This would allow any consumer/common man to make queries to neo4j database (Note: These queries need to be of a pre-defined structure).
@@ -75,7 +77,7 @@ englishParser("englishTextBoxId", codeMirrorEditor);
 ```
 
 **Note:** Styling is up to you. The above html file is just barebones and it would result in a website that would look like this:
-![Default Appearance](https://github.com/gsssrao/english2cypher/appearance.png)
+![Default Appearance](https://raw.githubusercontent.com/gsssrao/english2cypher/master/appearance.png?token=AJP-Ruzjre-XSJKjxvG6S_ZCNvBWq7lAks5bKTi1wA%3D%3D)
 
 ## Example
 
