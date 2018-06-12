@@ -1,13 +1,13 @@
-MATCH (a:person)-[:WORKS]-(b:company)
+MATCH (a:Person)-[:WORKS]-(b:Company)
 WHERE a.name = $[personName]
 RETURN a
 
-MATCH (a:person)-[:WORKS]-(b:company)
+MATCH (a:Person)-[:WORKS]-(b:Company)
 WHERE b.name = $[companyName]
 RETURN a
 
-MATCH (a:person)
+MATCH (a:Person)
 RETURN distinct a.name LIMIT $[number]
 
-MATCH (b:company)
+MATCH (b:Company)
 RETURN distinct b.name

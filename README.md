@@ -93,7 +93,7 @@ Companies that person $[personName](string) is working with
 with the corresponding cypher:
 
 ```
-MATCH (a:person)-[:WORKS]-(b:company)
+MATCH (a:Person)-[:WORKS]-(b:Company)
 WHERE a.name = $[personName]
 RETURN a
 ```
@@ -105,7 +105,7 @@ All the people working for the company $[companyName](string)
 ```
 with the corresponding cypher:
 ```
-MATCH (a:person)-[:WORKS]-(b:company)
+MATCH (a:Person)-[:WORKS]-(b:Company)
 WHERE b.name = $[companyName]
 RETURN a
 ```
@@ -117,7 +117,7 @@ All the people in the database limit to $[number](int)
 ```
 with the corresponding cypher:
 ```
-MATCH (a:person)
+MATCH (a:Person)
 RETURN distinct a.name LIMIT $[number]
 ```
 
@@ -128,7 +128,7 @@ All the companies in the database
 ```
 with the corresponding cypher:
 ```
-MATCH (b:company)
+MATCH (b:Company)
 RETURN distinct b.name
 ```
 
