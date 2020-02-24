@@ -40,7 +40,7 @@ nearleyc grammar.ne -o grammar.js
 
 The first command would generate `grammar.ne` and `english2cypher.js` respectively. The second command would generate `grammar.js`.
 
-Copy `english2cypher.js`, `node_modules` directory, `codemirror-5.38.0` directory and `grammar.js` to your website directory and add the following lines in `index.html`:
+Copy `english2cypher.js`, `node_modules` directory, `codemirror-5.52.0` directory and `grammar.js` to your website directory and add the following lines in `index.html`:
 
 ```
 <script src="node_modules/nearley/lib/nearley.js"></script>
@@ -48,10 +48,10 @@ Copy `english2cypher.js`, `node_modules` directory, `codemirror-5.38.0` director
 <script src="./grammar.js"></script>
 
 <!-- Codemirror for syntax highlighting -->
-<link rel="stylesheet" href="./codemirror-5.38.0/lib/codemirror.css">
-<link rel="stylesheet" href="./codemirror-5.38.0/theme/neo.css">
-<script src="./codemirror-5.38.0/lib/codemirror.js"></script>
-<script src="./codemirror-5.38.0/mode/cypher/cypher.js"></script>
+<link rel="stylesheet" href="./codemirror-5.52.0/lib/codemirror.css">
+<link rel="stylesheet" href="./codemirror-5.52.0/theme/neo.css">
+<script src="./codemirror-5.52.0/lib/codemirror.js"></script>
+<script src="./codemirror-5.52.0/mode/cypher/cypher.js"></script>
 
 <input class="input" type="text" placeholder="English Query" id="englishTextBoxId">
 
@@ -78,7 +78,7 @@ englishParser("englishTextBoxId", codeMirrorEditor);
 </script>
 ```
 
-**Note:** Styling is up to you. The above html file is just barebones and it would result in a website that would look like this:
+**Note:** On downloading codemirror, if the version you get is different from `5.52.0`, edit the path in `index.html` accordingly. Styling is up to you. The above html file is just barebones and it would result in a website that would look like this:
 ![Default Appearance](https://raw.githubusercontent.com/gsssrao/english2cypher/master/appearance.png?token=AJP-Ruzjre-XSJKjxvG6S_ZCNvBWq7lAks5bKTi1wA%3D%3D)
 
 ## Example
